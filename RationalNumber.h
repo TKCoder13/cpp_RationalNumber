@@ -28,8 +28,8 @@ class RationalNumber {
         int getNumerator();
         int getDenominator();
     
-        void setNumerator();
-        void setDenominator();
+        void setNumerator(int num);
+        void setDenominator(int num);
 
         RationalNumber add(RationalNumber rhs);
         RationalNumber sub(RationalNumber rhs);
@@ -40,8 +40,8 @@ class RationalNumber {
     private:
 
         /* VARIABLES */
-        int currentNumerator;
-        int currentDenominator;
+        int numerator;
+        int denominator;
     
         /* METHODS */
         int getGCD(int num1, int num2);
