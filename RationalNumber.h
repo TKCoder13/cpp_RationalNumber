@@ -20,7 +20,17 @@ class RationalNumber {
         // -- Deconstructor
         ~RationalNumber();
         
-        
+        /* METHODS */
+
+        string toString();
+
+        int getNumerator();
+
+        int getDenominator();
+    
+    private:
+        int numerator;
+        int denominator;
     
 };
 
