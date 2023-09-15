@@ -16,7 +16,7 @@ class RationalNumber {
         // -- Overload Constructor
         RationalNumber(int numerator, int denominator);
         // -- Copy Constructor
-        RationalNumber(const RationalNumber rhs);
+        RationalNumber(const RationalNumber &src);
         // -- Deconstructor
         ~RationalNumber();
         
@@ -40,8 +40,8 @@ class RationalNumber {
     private:
 
         /* VARIABLES */
-        int numerator;
-        int denominator;
+        int currentNumerator;
+        int currentDenominator;
     
         /* METHODS */
         int getGCD(int num1, int num2);
