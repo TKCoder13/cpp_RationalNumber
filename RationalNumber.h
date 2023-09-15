@@ -16,23 +16,35 @@ class RationalNumber {
         // -- Overload Constructor
         RationalNumber(int numerator, int denominator);
         // -- Copy Constructor
-        RationalNumber(const RationalNumber);
+        RationalNumber(const RationalNumber rhs);
         // -- Deconstructor
         ~RationalNumber();
         
         /* METHODS */
 
         string toString();
+        bool equals(RationalNumber rhs);
 
         int getNumerator();
-
         int getDenominator();
     
+        void setNumerator();
+        void setDenominator();
+
+        RationalNumber add(RationalNumber rhs);
+        RationalNumber sub(RationalNumber rhs);
+        RationalNumber mult(RationalNumber rhs);
+        RationalNumber div(RationalNumber rhs);
+        double sqrt();
+
     private:
+
+        /* VARIABLES */
         int numerator;
         int denominator;
     
+        /* METHODS */
+        int getGCD(int num1, int num2);
 };
 
-#endif
-// -- RationalNumber_h
+#endif /* RationalNumber_h */
