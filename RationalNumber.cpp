@@ -5,17 +5,22 @@ using namespace std;
 int currentNumerator;
 int currentDenominator;
 
-// -- default constructor
+// -- Default Constructor
 RationalNumber::RationalNumber() 
 : currentNumerator(0), currentDenominator(1) {}
 
-// -- overload constructor
+// -- Overload Constructor
 RationalNumber::RationalNumber(int numerator, int denominator) {
     this.currentNumerator = numerator;
     this.currentDenominator = denominator;
 }
 
-// -- copy constructor
+// -- Copy Constructor
 RationalNumber::RationalNumber(const RationalNumber &src) {
 
+}
+
+// -- Deconstructor
+RationalNumber::~RationalNumber() {
+    cout << "Deconstructor" << endl;
 }
