@@ -17,3 +17,8 @@
 - [ ] div()
 - [ ] sqrt()
 - [ ] getGCD()
+
+# Notes
+
+- equals method needs work (typeid method doesn't work currently)
+- run to find more errors!
