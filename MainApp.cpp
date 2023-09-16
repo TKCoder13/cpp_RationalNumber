@@ -1,4 +1,4 @@
-
+#include "RationalNumber.cpp"
 #include "RationalNumber.h"
 
 #include <string>
