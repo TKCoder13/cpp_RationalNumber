@@ -5,16 +5,15 @@
 - [X] Convert Java to C++
 
 - [ ] Constructors + Deconstructor
-- [ ] toString()
-- [ ] equals()
 - [ ] getNumerator()
 - [ ] getDenominator()
 - [ ] setNumerator()
 - [ ] setDenominator()
+- [ ] equals()
+- [ ] toString()
 - [ ] add()
 - [ ] sub()
 - [ ] mult()
 - [ ] div()
 - [ ] sqrt()
-
 - [ ] getGCD()
