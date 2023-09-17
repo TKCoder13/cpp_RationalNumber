@@ -1,6 +1,7 @@
 #include "RationalNumber.h"
 #include <string>
 #include <cmath>
+#include <typeinfo>
 
 using namespace std;
 
@@ -45,20 +46,31 @@ void RationalNumber::setNumerator(int num) {
 }
 
 void RationalNumber::setDenominator(int num) {
-    this->denominator = num;
+    char exception[] = "Denominator cannot be 0";
+    char* zeroException = &exception;
+    try {
+        if (num != 0) {
+            this->denominator = num;
+            return;
+        } else {
+            throw 
+        }
+    } catch {
+        cout << "" << endl;
+    }
 }
 
 bool RationalNumber::equals(RationalNumber rhs) {
-    if (typeid(this) == typeid(rhs)) {
+    if (typeid(*this) == typeid(rhs)) {
         if (this->numerator == rhs.numerator && this->numerator == rhs.denominator) 
             return true;
     }
     return false;
 }
 
-// string RationalNumber::toString(RationalNumber &src) {
-//     return "";
-// }
+string toString(RationalNumber &src) {
+    return "";
+}
 
 int RationalNumber::getGCD(int num1, int num2) {
     int gcd = 1;
@@ -131,7 +143,7 @@ RationalNumber RationalNumber::div(RationalNumber rhs) {
         } else {
             throw outDenominator;
         }
-    } catch (int zero) {
+    } catch (char* exception) {
         cout << "Cannot be divisible by 0" << endl;
     }
 }
