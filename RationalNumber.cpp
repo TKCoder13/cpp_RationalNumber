@@ -1,4 +1,5 @@
 #include "RationalNumber.h"
+
 #include <string>
 #include <cmath>
 #include <typeinfo>
@@ -27,9 +28,7 @@ RationalNumber::RationalNumber(const RationalNumber &src) {
 }
 
 // -- Deconstructor
-RationalNumber::~RationalNumber() {
-    cout << "Deconstructor" << endl;
-}
+RationalNumber::~RationalNumber() {}
 
 /* METHODS */
 
@@ -60,6 +59,8 @@ void RationalNumber::setDenominator(int num) {
     }
 }
 
+
+
 bool RationalNumber::equals(RationalNumber rhs) {
     if (typeid(*this) == typeid(rhs)) {
         if (this->numerator == rhs.numerator && this->numerator == rhs.denominator) 
@@ -69,7 +70,56 @@ bool RationalNumber::equals(RationalNumber rhs) {
 }
 
 string RationalNumber::toString() {
-    return "";
+    int currentNumerator = this->getNumerator();
+    int currentDenominator = this->getDenominator();
+
+    // -- Checks for negative values
+    bool isNegative = false;
+    if (currentNumerator < 0) isNegative = !isNegative;
+    if (currentDenominator < 0) isNegative = !isNegative;
+
+    currentNumerator = std::abs(currentNumerator);
+    currentDenominator = std::abs(currentDenominator);
+
+    int wholeNumber = std::abs(currentNumerator / currentDenominator);
+    int remainder = std::abs(currentNumerator % currentDenominator);
+
+    // -- Reduce improper fractions
+    int gcd = getGCD(remainder, currentDenominator);
+    if (gcd > 1) {
+        remainder = remainder / gcd;
+        currentDenominator = currentDenominator / gcd;
+    }
+
+    if (isNegative) {
+        if (wholeNumber == 0) {
+            if (remainder == 0) {
+                return "-" + to_string(wholeNumber);
+            } else {
+                return "-" + to_string(remainder) + "/" + to_string(currentDenominator);
+            }
+        } else {
+            if (remainder == 0) {
+                return "-" + to_string(wholeNumber);
+            } else {
+                return "-" + to_string(wholeNumber) + " " + to_string(remainder) + "/" + to_string(currentDenominator);
+            }
+        }
+    } else {
+        if (wholeNumber == 0) {
+            if (remainder == 0) {
+                return to_string(wholeNumber);
+            } else {
+                return to_string(remainder) + "/" + to_string(currentDenominator);
+            }
+        } else {
+            if (remainder == 0) {
+                return to_string(wholeNumber);
+            } else {
+                return to_string(wholeNumber) + " " + to_string(remainder) + "/" + to_string(currentDenominator);
+            }
+        }
+    }
 }
 
 int RationalNumber::getGCD(int num1, int num2) {
