@@ -47,16 +47,16 @@ void RationalNumber::setNumerator(int num) {
 
 void RationalNumber::setDenominator(int num) {
     char exception[] = "Denominator cannot be 0";
-    char* zeroException = &exception;
+    char* zeroException = exception;
     try {
         if (num != 0) {
             this->denominator = num;
             return;
         } else {
-            throw 
+            throw zeroException;
         }
-    } catch {
-        cout << "" << endl;
+    } catch (std::exception& e) {
+        cout << "exception caught: " << e.what() << endl;
     }
 }
 
@@ -68,7 +68,7 @@ bool RationalNumber::equals(RationalNumber rhs) {
     return false;
 }
 
-string toString(RationalNumber &src) {
+string RationalNumber::toString() {
     return "";
 }
 
