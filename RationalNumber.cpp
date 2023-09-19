@@ -184,6 +184,8 @@ RationalNumber RationalNumber::mult(RationalNumber rhs) {
 }
 
 RationalNumber RationalNumber::div(RationalNumber rhs) {
+    string divZeroMessage = "Not divisible by 0";
+    string* divZeroException = &divZeroMessage;
     try {
         int outNumerator = this->getNumerator() * rhs.getDenominator();
         int outDenominator = this->getDenominator() * rhs.getNumerator();
@@ -191,10 +193,10 @@ RationalNumber RationalNumber::div(RationalNumber rhs) {
             RationalNumber output(outNumerator, outDenominator);
             return output;
         } else {
-            throw outDenominator;
+            throw divZeroException;
         }
-    } catch (char* exception) {
-        cout << "Cannot be divisible by 0" << endl;
+    } catch (string* exception) {
+        cout << exception << endl;
     }
 }
 
