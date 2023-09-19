@@ -4,18 +4,18 @@
 - [X] Copy over the Java file
 - [X] Convert Java to C++
 
-- [ ] Constructors + Deconstructor
-- [ ] getNumerator()
-- [ ] getDenominator()
-- [ ] setNumerator()
-- [ ] setDenominator()
-- [ ] equals()
+- [X] Constructors + Deconstructor
+- [X] getNumerator()
+- [X] getDenominator()
+- [X] setNumerator()
+- [X] setDenominator()
+- [X] equals()
 - [ ] toString()
-- [ ] add()
-- [ ] sub()
-- [ ] mult()
+- [X] add()
+- [X] sub()
+- [X] mult()
 - [ ] div()
-- [ ] sqrt()
+- [ ] sqrt()s
 - [ ] getGCD()
 
 # Notes
