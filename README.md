@@ -10,13 +10,13 @@
 - [X] setNumerator()
 - [X] setDenominator()
 - [X] equals()
-- [ ] toString()
+- [X] toString()
 - [X] add()
 - [X] sub()
 - [X] mult()
-- [ ] div()
+- [X] div()
 - [ ] sqrt()
-- [ ] getGCD()
+- [X] getGCD()
 
 # Notes
 
