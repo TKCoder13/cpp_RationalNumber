@@ -62,10 +62,9 @@ void RationalNumber::setDenominator(int num) {
 
 
 bool RationalNumber::equals(RationalNumber rhs) {
-    if (typeid(*this) == typeid(rhs)) {
-        if (this->numerator == rhs.numerator && this->numerator == rhs.denominator) 
+    if (typeid(*this) == typeid(rhs))
+        if (this->numerator == rhs.numerator && this->denominator == rhs.denominator) 
             return true;
-    }
     return false;
 }
 
