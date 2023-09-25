@@ -15,7 +15,7 @@
 - [X] sub()
 - [X] mult()
 - [X] div()
-- [ ] sqrt()
+- [X] sqrt()
 - [X] getGCD()
 
 # Notes

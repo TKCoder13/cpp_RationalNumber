@@ -200,5 +200,13 @@ RationalNumber RationalNumber::div(RationalNumber rhs) {
 }
 
 double RationalNumber::sqrt() {
-    return 0.0;
+    double sqrtOutput;
+    char negativeNumErrorMessage[] = "You cannot square root a negative number";
+    char *negativeNumError = negativeNumErrorMessage;
+    if (std::sqrt((double) this->getNumerator() / (double) this->getDenominator()) < 0) {
+        throw negativeNumError;
+    } else {
+        sqrtOutput = std::sqrt((double) this->getNumerator() / (double) this->getDenominator());
+    }
+    return sqrtOutput;
 }
